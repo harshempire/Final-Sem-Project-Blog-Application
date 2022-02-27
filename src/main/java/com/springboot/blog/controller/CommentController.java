@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@Api(value = "CRUD REST APIs for Comment Respource")
+@Api(value = "CRUD REST APIs for Comment Resource")
 @RestController
 @RequestMapping("/api/v1")
 public class CommentController {
