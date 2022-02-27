@@ -24,8 +24,8 @@ public class PostServiceImpl implements PostService {
     private ModelMapper mapper;
 
     public PostServiceImpl(PostRepository postRepository, ModelMapper mapper) {
-          this.postRepository = postRepository;
-          this.mapper = mapper;
+        this.postRepository = postRepository;
+        this.mapper = mapper;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class PostServiceImpl implements PostService {
         // get content for page object
         List<Post> listOfPosts = posts.getContent();
 
-        List<PostDto> content= listOfPosts.stream().map(post -> mapToDTO(post)).collect(Collectors.toList());
+        List<PostDto> content = listOfPosts.stream().map(post -> mapToDTO(post)).collect(Collectors.toList());
 
         PostResponse postResponse = new PostResponse();
         postResponse.setContent(content);
@@ -94,7 +94,7 @@ public class PostServiceImpl implements PostService {
     }
 
     // convert Entity into DTO
-    private PostDto mapToDTO(Post post){
+    private PostDto mapToDTO(Post post) {
         PostDto postDto = mapper.map(post, PostDto.class);
 //        PostDto postDto = new PostDto();
 //        postDto.setId(post.getId());
@@ -105,7 +105,7 @@ public class PostServiceImpl implements PostService {
     }
 
     // convert DTO to entity
-    private Post mapToEntity(PostDto postDto){
+    private Post mapToEntity(PostDto postDto) {
         Post post = mapper.map(postDto, Post.class);
 //        Post post = new Post();
 //        post.setTitle(postDto.getTitle());
